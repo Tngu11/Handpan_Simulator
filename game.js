@@ -1,13 +1,33 @@
-var score = 0;
 class Game {
   constructor() {
     this.gamePatter = [];
+    // this.score = 0;
 
     this.patterns = [
       [
         {
-          color: "gold",
-          function: this.gold,
+          color: "darkred",
+          function: this.darkred,
+          delay: 500
+        },
+        {
+          color: "darkblue",
+          function: this.darkblue,
+          delay: 500
+        },
+        {
+          color: "indigo",
+          function: this.indigo,
+          delay: 500
+        },
+        {
+          color: "turquoise",
+          function: this.turquoise,
+          delay: 500
+        },
+        {
+          color: "red",
+          function: this.red,
           delay: 500
         },
         {
@@ -16,20 +36,25 @@ class Game {
           delay: 500
         },
         {
+          color: "purple",
+          function: this.purple,
+          delay: 500
+        },
+        {
           color: "orange",
           function: this.orange,
           delay: 500
         },
         {
-          color: "blue",
-          function: this.blue,
+          color: "gold",
+          function: this.gold,
           delay: 500
         }
       ],
       [
         {
-          color: "magenta",
-          function: this.magenta,
+          color: "darkred",
+          function: this.darkred,
           delay: 400
         },
         {
@@ -59,8 +84,8 @@ class Game {
         }
       ][
         ({
-          color: "magenta",
-          function: this.magenta,
+          color: "indigo",
+          function: this.indigo,
           delay: 400
         },
         {
@@ -104,9 +129,11 @@ class Game {
 
   setup() {
     let button = createButton("Play");
+    // let col = color("");
     button.position(50, 50);
     button.mousePressed(this.playPatter);
     this.button = button;
+    // button.style("background-color", col);
   }
 
   draw() {
@@ -114,21 +141,21 @@ class Game {
       fill(this.circle.color);
       circle(this.circle.x, this.circle.y, 30);
     }
-    if (this.patter && this.gamePatter.length === this.patter.length) {
-      for (let i = 0; i < this.patter.length; i++) {
-        if (this.patter[i] !== this.gamePatter[i]) {
+    if (this.pattern && this.gamePatter.length === this.pattern.length) {
+      for (let i = 0; i < this.pattern.length; i++) {
+        if (this.pattern[i] !== this.gamePatter[i]) {
           console.log("Try it again 😉");
 
           return "Try it again 😉";
+        } else {
+          this.score += 1;
         }
       }
       console.log("You got the Rythm");
-      score += 1;
       return "You got the Rythm";
 
       // if (this.patter1.equals(this.gamePatter) === true) {
-
-      //   console.log("Nice Rythm");
+      //   console.log("Keep playing");
       // }
     }
   }
@@ -166,102 +193,101 @@ class Game {
   // };
 
   gold = () => {
-    let c = color("gold");
+    let c = color("darkred");
     sound1.sound.play();
     this.circle = {
       color: c,
-      x: 397,
-      y: 271
+      x: 500,
+      y: 322
     };
-    // fill(c);
-    // circle(397, 271, 30);
   };
+  //spacebar
 
   yellow = () => {
-    let c = color("yellow");
+    let c = color("darkblue");
     sound2.sound.play();
     this.circle = {
       color: c,
-      x: 399,
-      y: 455
+      x: 513,
+      y: 513
     };
   };
-  //cmd (right hand side)
+  //m
 
   green = () => {
-    let c = color("green");
+    let c = color("indigo");
     sound3.sound.play();
     this.circle = {
       color: c,
-      x: 528,
-      y: 404
+      x: 374,
+      y: 464
     };
   };
-  //alt (right hand side)
+  //c
 
   purple = () => {
-    let c = color("purple");
+    let c = color("turquoise");
     sound4.sound.play();
     this.circle = {
       color: c,
-      x: 577,
-      y: 294
+      x: 644,
+      y: 447
     };
   };
-  //.
+  //k
 
   orange = () => {
-    let c = color("orange");
+    let c = color("red");
     sound5.sound.play();
     this.circle = {
       color: c,
-      x: 553,
-      y: 177
+      x: 322,
+      y: 344
     };
   };
-  //,
+  //d
 
   red = () => {
-    let c = color("red");
+    let c = color("green");
     sound6.sound.play();
     this.circle = {
       color: c,
-      x: 467,
-      y: 103
+      x: 688,
+      y: 311
     };
   };
-  //x
+  //i
 
   magenta = () => {
-    let c = color("magenta");
+    let c = color("purple");
     sound7.sound.play();
     this.circle = {
       color: c,
-      x: 394,
-      y: 100
+      x: 362,
+      y: 202
     };
   };
-  //y
+  //e
 
   blue = () => {
     let c = color("blue");
     sound8.sound.play();
     this.circle = {
       color: c,
-      x: 241,
-      y: 202
+      x: 618,
+      y: 188
     };
   };
-  //alt (left hand side)
+  //8
 
   turquoise = () => {
     let c = color("turquoise");
     sound9.sound.play();
     this.circle = {
       color: c,
-      x: 263,
-      y: 381
+      x: 488,
+      y: 144
     };
   };
-  //cmd (left hand side)
+  //4
 }

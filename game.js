@@ -2,7 +2,6 @@ class Game {
   constructor() {
     this.gamePatter = [];
     // this.score = 0;
-
     this.patterns = [
       [
         {
@@ -82,8 +81,9 @@ class Game {
           function: this.red,
           delay: 400
         }
-      ][
-        ({
+      ],
+      [
+        {
           color: "indigo",
           function: this.indigo,
           delay: 400
@@ -104,7 +104,7 @@ class Game {
           delay: 400
         },
         {
-          color: "yelllow",
+          color: "yellow",
           function: this.yellow,
           delay: 400
         },
@@ -122,7 +122,7 @@ class Game {
           color: "blue",
           function: this.blue,
           delay: 400
-        })
+        }
       ]
     ];
   }
@@ -148,7 +148,7 @@ class Game {
 
           return "Try it again 😉";
         } else {
-          this.score += 1;
+          // this.score += 1;
         }
       }
       console.log("You got the Rythm");
@@ -165,7 +165,7 @@ class Game {
 
     this.patter = this.patterns[
       Math.floor(Math.random() * this.patterns.length)
-    ];
+    ]; // random array of patterns from patterns
 
     let totalDelay = 0;
     this.patter.forEach(sound => {
@@ -173,9 +173,12 @@ class Game {
       setTimeout(sound.function, totalDelay);
     });
 
+    // totalDelay += this.patter.delay;
+    // setTimeout(this.patter.function, totalDelay);
+
     setTimeout(() => {
       this.circle = null;
-      this.button.mousePressed(this.playPatter);
+      // this.button.mousePressed(this.playPatter);
     }, totalDelay + 1000);
   };
 
@@ -192,7 +195,7 @@ class Game {
   //   }, 3000);
   // };
 
-  gold = () => {
+  darkred = () => {
     let c = color("darkred");
     sound1.sound.play();
     this.circle = {
@@ -203,7 +206,7 @@ class Game {
   };
   //spacebar
 
-  yellow = () => {
+  darkblue = () => {
     let c = color("darkblue");
     sound2.sound.play();
     this.circle = {
@@ -214,7 +217,7 @@ class Game {
   };
   //m
 
-  green = () => {
+  indigo = () => {
     let c = color("indigo");
     sound3.sound.play();
     this.circle = {
@@ -225,7 +228,7 @@ class Game {
   };
   //c
 
-  purple = () => {
+  turquoise = () => {
     let c = color("turquoise");
     sound4.sound.play();
     this.circle = {
@@ -236,7 +239,7 @@ class Game {
   };
   //k
 
-  orange = () => {
+  red = () => {
     let c = color("red");
     sound5.sound.play();
     this.circle = {
@@ -247,7 +250,7 @@ class Game {
   };
   //d
 
-  red = () => {
+  green = () => {
     let c = color("green");
     sound6.sound.play();
     this.circle = {
@@ -258,7 +261,7 @@ class Game {
   };
   //i
 
-  magenta = () => {
+  purple = () => {
     let c = color("purple");
     sound7.sound.play();
     this.circle = {
@@ -280,8 +283,8 @@ class Game {
   };
   //8
 
-  turquoise = () => {
-    let c = color("turquoise");
+  gold = () => {
+    let c = color("gold");
     sound9.sound.play();
     this.circle = {
       color: c,

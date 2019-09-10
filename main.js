@@ -109,39 +109,39 @@ function keyPressed() {
     //spacebar
     // console.log("hey");
     sound1.sound.play();
-    game.gamePatter.push("gold");
+    game.gamePatter.push("darkred");
   } else if (keyCode === 77) {
     //m
     sound2.sound.play();
-    game.gamePatter.push("yellow");
+    game.gamePatter.push("darkblue");
   } else if (keyCode === 67) {
     //c
     sound3.sound.play();
-    game.gamePatter.push("green");
+    game.gamePatter.push("indigo");
   } else if (keyCode === 75) {
     //k
-    sound5.sound.play();
-    game.gamePatter.push("orange");
+    sound4.sound.play();
+    game.gamePatter.push("turquoise");
   } else if (keyCode === 68) {
     //d
-    sound7.sound.play();
-    game.gamePatter.push("magenta");
+    sound5.sound.play();
+    game.gamePatter.push("red");
   } else if (keyCode === 73) {
     //i
-    sound8.sound.play();
-    game.gamePatter.push("blue");
+    sound6.sound.play();
+    game.gamePatter.push("green");
   } else if (keyCode === 69) {
     //e
-    sound9.sound.play();
-    game.gamePatter.push("turquoise");
+    sound7.sound.play();
+    game.gamePatter.push("purple");
   } else if (keyCode === 56) {
     //8
-    sound6.sound.play();
-    game.gamePatter.push("red");
+    sound8.sound.play();
+    game.gamePatter.push("orange");
   } else if (keyCode === 52) {
     //4
-    sound4.sound.play();
-    game.gamePatter.push("purple");
+    sound9.sound.play();
+    game.gamePatter.push("gold");
   } else if (keyCode === 13) {
     //enter
     backgroundSound.sound.play();
@@ -155,3 +155,6 @@ function keyPressed() {
 //   fill("242, 245, 250");
 //   text("Play the Rythm");
 // }
+
+// document.querySelector(".message").innerHTML = <p>:)</p>;
+// document.querySelector(".message").style.display = "block";
